@@ -1,39 +1,48 @@
-<script>
-function openPopup(url){
-    window.open(
-        url,
-        "_blank",
-        "width=320,height=600"
-    );
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open App</title>
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#0f172a;
+    color:#fff;
+    font-family:Arial;
+    text-align:center;
 }
+.btn{
+    background:#0088cc;
+    padding:15px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+</style>
 
-/* এখানে তোমার নতুন লিংক */
-const popupLink = "site://1winpbu.com";
+</head>
+<body>
 
-/* 20 Popup Open */
-setTimeout(()=>{ openPopup(popupLink); },300);
-setTimeout(()=>{ openPopup(popupLink); },700);
-setTimeout(()=>{ openPopup(popupLink); },1100);
-setTimeout(()=>{ openPopup(popupLink); },1500);
-setTimeout(()=>{ openPopup(popupLink); },1900);
-setTimeout(()=>{ openPopup(popupLink); },2300);
-setTimeout(()=>{ openPopup(popupLink); },2700);
-setTimeout(()=>{ openPopup(popupLink); },3100);
-setTimeout(()=>{ openPopup(popupLink); },3500);
-setTimeout(()=>{ openPopup(popupLink); },3900);
-setTimeout(()=>{ openPopup(popupLink); },4300);
-setTimeout(()=>{ openPopup(popupLink); },4700);
-setTimeout(()=>{ openPopup(popupLink); },5100);
-setTimeout(()=>{ openPopup(popupLink); },5500);
-setTimeout(()=>{ openPopup(popupLink); },5900);
-setTimeout(()=>{ openPopup(popupLink); },6300);
-setTimeout(()=>{ openPopup(popupLink); },6700);
-setTimeout(()=>{ openPopup(popupLink); },7100);
-setTimeout(()=>{ openPopup(popupLink); },7500);
-setTimeout(()=>{ openPopup(popupLink); },7900);
+<div>
+    <h2>Continue to App</h2>
+    <div class="btn" onclick="openApp()">Open Now</div>
+</div>
 
-/* Telegram Redirect (এটাও একই লিংক করলাম) */
-setTimeout(()=>{
-    window.location.href="site://1winpbu.com";
-},9500);
+<script>
+function openApp(){
+    // app open try
+    window.location.href = "site://1winpbu.com";
+
+    // fallback after delay
+    setTimeout(()=>{
+        window.location.href = "site://1winpbu.com/";
+    }, 3000);
+}
 </script>
+
+</body>
+</html>
